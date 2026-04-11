@@ -9,6 +9,7 @@ var currentProfile = 'terminal';
 var lastSVG = '';
 var lastMarkdown = '';
 var bannerText = '';
+var figletRetryTimer = null;
 
 function escAttr(s) {
   return String(s || '').replace(/"/g, '&quot;');
@@ -87,6 +88,18 @@ function getData() {
   };
 }
 
+function setFigletPreview(text) {
+  var preview = document.getElementById('figlet-preview');
+  if (!preview) return;
+  var pre = preview.querySelector('pre');
+  if (!pre) {
+    pre = document.createElement('pre');
+    preview.innerHTML = '';
+    preview.appendChild(pre);
+  }
+  pre.textContent = text;
+}
+
 function updateBanner() {
   var fontName = g('figlet-font') || 'big';
   var text = g('banner-text');
@@ -95,25 +108,27 @@ function updateBanner() {
   }
   if (!text) text = 'README';
 
+  if (figletRetryTimer) {
+    clearTimeout(figletRetryTimer);
+    figletRetryTimer = null;
+  }
+
   if (!Figlet.isLoaded(fontName)) {
     bannerText = text;
+    setFigletPreview('Loading font "' + fontName + '"...');
+    figletRetryTimer = setTimeout(function() {
+      updateBanner();
+    }, 80);
     return;
   }
 
   try {
     bannerText = Figlet.renderText(text, fontName);
-  } catch(e) {
+  } catch (e) {
     bannerText = text;
   }
 
-  var pre = document.querySelector('#figlet-preview pre');
-  if (!pre) {
-    var preEl = document.createElement('pre');
-    document.getElementById('figlet-preview').innerHTML = '';
-    document.getElementById('figlet-preview').appendChild(preEl);
-    pre = preEl;
-  }
-  pre.textContent = bannerText;
+  setFigletPreview(bannerText);
 }
 
 function generate() {
@@ -153,8 +168,7 @@ function switchProfile(name) {
 document.addEventListener('DOMContentLoaded', function() {
   renderSkillRows();
 
-  var previewEl = document.getElementById('figlet-preview');
-  previewEl.innerHTML = '<pre></pre>';
+  setFigletPreview('');
   updateBanner();
 
   document.getElementById('add-skill').addEventListener('click', function() {
@@ -186,6 +200,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.panel.active') && document.querySelector('.panel.active').id === 'tab-preview') {
       generate();
     }
+  });
+
+  document.getElementById('figlet-font').addEventListener('input', function() {
+    updateBanner();
   });
 
   document.getElementById('username').addEventListener('input', function() {

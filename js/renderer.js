@@ -45,9 +45,9 @@ function svgText(x, y, parts) {
 }
 
 function buildDefs() {
-  return '<defs><style>text { font-family: \'JetBrains Mono\', \'Courier New\', monospace; font-size: ' + FONT_SIZE + 'px; white-space: pre; }</style>' +
+  return '<defs><style>text { font-family: \'JetBrains Mono\', \'Courier New\', monospace; font-size: ' + FONT_SIZE + 'px; white-space: pre; stroke: rgba(0,0,0,0.9); stroke-width: 1.3px; paint-order: stroke fill; filter: drop-shadow(0 1px 1.5px rgba(0,0,0,0.55)); }</style>' +
     '<filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>' +
-    '<filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000" flood-opacity="0.7"/></filter>' +
+    '<filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.45"/></filter>' +
     '</defs>';
 }
 
@@ -187,9 +187,9 @@ function renderProfileTerminal(d) {
 
   return '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '">' +
     buildDefs() +
-    '<rect width="' + W + '" height="' + H + '" rx="10" fill="' + C.bg + '" stroke="' + C.border + '" stroke-width="1.5" filter="url(#shadow)"/>' +
-    '<rect width="' + W + '" height="36" rx="10" fill="' + C.bg3 + '"/>' +
-    '<rect y="26" width="' + W + '" height="10" fill="' + C.bg3 + '"/>' +
+    '<rect width="' + W + '" height="' + H + '" rx="10" fill="none" stroke="' + C.border + '" stroke-width="1.5" filter="url(#shadow)"/>' +
+    '<rect width="' + W + '" height="36" rx="10" fill="none"/>' +
+    '<rect y="26" width="' + W + '" height="10" fill="none"/>' +
     '<line x1="0" y1="36" x2="' + W + '" y2="36" stroke="' + C.border + '" stroke-width="1"/>' +
     '<circle cx="22" cy="18" r="5.5" fill="#e05c5c"/>' +
     '<circle cx="40" cy="18" r="5.5" fill="#e8c547"/>' +
@@ -306,7 +306,7 @@ function renderProfileMinimal(d) {
 
   return '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '">' +
     buildDefs() +
-    '<rect width="' + W + '" height="' + H + '" rx="8" fill="' + C.bg + '" stroke="' + C.border + '" stroke-width="1.5"/>' +
+    '<rect width="' + W + '" height="' + H + '" rx="8" fill="none" stroke="' + C.border + '" stroke-width="1.5"/>' +
     '<rect width="6" height="' + H + '" rx="3" fill="' + C.accentB + '" opacity="0.6"/>' +
     out.join('\n') +
     '</svg>';
@@ -323,20 +323,27 @@ function renderProfileHacker(d) {
     return el;
   }
   function blank() { y += LINE_H; }
-  function sep(char) { char = char || '═'; return line([ts(C.green, char.repeat(70))]); }
+  var HACK = {
+    primary: '#8eaecb',
+    bright: '#dfe7ef',
+    soft: '#c7d3df',
+    muted: '#90a2b4',
+    dim: '#627285'
+  };
+  function sep(char) { char = char || '═'; return line([ts(HACK.primary, char.repeat(70))]); }
 
-  out.push('<rect width="' + W + '" height="36" rx="8" fill="rgba(57,211,83,0.05)"/>');
-  out.push('<rect y="26" width="' + W + '" height="10" fill="rgba(57,211,83,0.05)"/>');
-  out.push('<line x1="0" y1="36" x2="' + W + '" y2="36" stroke="rgba(57,211,83,0.3)" stroke-width="1"/>');
+  out.push('<rect width="' + W + '" height="36" rx="8" fill="rgba(92,122,152,0.08)"/>');
+  out.push('<rect y="26" width="' + W + '" height="10" fill="rgba(92,122,152,0.08)"/>');
+  out.push('<line x1="0" y1="36" x2="' + W + '" y2="36" stroke="rgba(133,161,190,0.45)" stroke-width="1"/>');
 
   var cx = W / 2;
   var titleStr = '[ ' + (d.username || 'username') + '.sh — v1.0 — ACTIVE ]';
-  out.push('<text x="' + cx + '" y="23" text-anchor="middle" fill="' + C.green + '" font-size="11" letter-spacing="2">' + esc(titleStr) + '</text>');
+  out.push('<text x="' + cx + '" y="23" text-anchor="middle" fill="' + HACK.primary + '" font-size="11" letter-spacing="2">' + esc(titleStr) + '</text>');
 
   if (d.opts.banner && d.banner) {
     var bannerLines = d.banner.split('\n');
     bannerLines.forEach(function(bl) {
-      out.push('<text x="' + cx + '" y="' + y + '" text-anchor="middle" fill="' + C.green + '" font-weight="bold">' + esc(bl) + '</text>');
+      out.push('<text x="' + cx + '" y="' + y + '" text-anchor="middle" fill="' + HACK.primary + '" font-weight="bold">' + esc(bl) + '</text>');
       y += LINE_H;
     });
     blank();
@@ -345,25 +352,25 @@ function renderProfileHacker(d) {
   out.push(sep());
 
   if (d.fullname || d.tagline) {
-    out.push(line([ts(C.green, '> '), ts(C.white, 'ID: '), ts(C.green, d.fullname || d.username || '', true)]));
-    if (d.tagline) out.push(line([ts(C.green, '> '), ts(C.white, 'ROLE: '), ts(C.text, d.tagline)]));
+    out.push(line([ts(HACK.primary, '> '), ts(HACK.bright, 'ID: '), ts(HACK.primary, d.fullname || d.username || '', true)]));
+    if (d.tagline) out.push(line([ts(HACK.primary, '> '), ts(HACK.bright, 'ROLE: '), ts(HACK.soft, d.tagline)]));
   }
-  if (d.location) out.push(line([ts(C.green, '> '), ts(C.white, 'LOC: '), ts(C.text, d.location)]));
-  if (d.university) out.push(line([ts(C.green, '> '), ts(C.white, 'ORG: '), ts(C.text, d.university)]));
-  if (d.club) out.push(line([ts(C.green, '> '), ts(C.white, 'GROUP: '), ts(C.text, d.club)]));
-  if (d.role) out.push(line([ts(C.green, '> '), ts(C.white, 'TITLE: '), ts(C.text, d.role)]));
+  if (d.location) out.push(line([ts(HACK.primary, '> '), ts(HACK.bright, 'LOC: '), ts(HACK.soft, d.location)]));
+  if (d.university) out.push(line([ts(HACK.primary, '> '), ts(HACK.bright, 'ORG: '), ts(HACK.soft, d.university)]));
+  if (d.club) out.push(line([ts(HACK.primary, '> '), ts(HACK.bright, 'GROUP: '), ts(HACK.soft, d.club)]));
+  if (d.role) out.push(line([ts(HACK.primary, '> '), ts(HACK.bright, 'TITLE: '), ts(HACK.soft, d.role)]));
 
   out.push(sep('─'));
   blank();
 
   if (d.skills && d.skills.length) {
-    out.push(line([ts(C.green, '// SKILL MATRIX')]));
+    out.push(line([ts(HACK.primary, '// SKILL MATRIX')]));
     blank();
     d.skills.forEach(function(sk) {
       var nm = ('[' + (sk.name || '') + ']').padEnd(22);
       var p = Math.min(100, Math.max(0, parseInt(sk.pct) || 0));
       var bar = pct2bar(p);
-      out.push(line([ts(C.yellow, nm), ts(C.green, bar.fill), ts(C.dim, bar.empty), ts(C.mid, ' ' + p + '%')]));
+      out.push(line([ts(HACK.bright, nm), ts(HACK.primary, bar.fill), ts(HACK.dim, bar.empty), ts(HACK.muted, ' ' + p + '%')]));
     });
     blank();
     out.push(sep('─'));
@@ -371,11 +378,11 @@ function renderProfileHacker(d) {
   }
 
   if (d.langs || d.os || d.tools) {
-    out.push(line([ts(C.green, '// ARSENAL')]));
+    out.push(line([ts(HACK.primary, '// ARSENAL')]));
     blank();
-    if (d.langs) out.push(line([ts(C.yellow, 'LANG    '), ts(C.text, d.langs)]));
-    if (d.os) out.push(line([ts(C.yellow, 'OS      '), ts(C.text, d.os)]));
-    if (d.tools) out.push(line([ts(C.yellow, 'TOOLS   '), ts(C.text, d.tools)]));
+    if (d.langs) out.push(line([ts(HACK.bright, 'LANG    '), ts(HACK.soft, d.langs)]));
+    if (d.os) out.push(line([ts(HACK.bright, 'OS      '), ts(HACK.soft, d.os)]));
+    if (d.tools) out.push(line([ts(HACK.bright, 'TOOLS   '), ts(HACK.soft, d.tools)]));
     blank();
     out.push(sep('─'));
     blank();
@@ -391,24 +398,24 @@ function renderProfileHacker(d) {
   if (d.platform_label || d.platform_url) cts.push([(d.platform_label || 'PLATFORM').toUpperCase(), d.platform_url || '']);
 
   if (cts.length) {
-    out.push(line([ts(C.green, '// CONTACT CHANNELS')]));
+    out.push(line([ts(HACK.primary, '// CONTACT CHANNELS')]));
     blank();
     cts.forEach(function(c) {
-      out.push(line([ts(C.yellow, c[0].padEnd(12)), ts(C.green, '>> '), ts(C.text, c[1])]));
+      out.push(line([ts(HACK.bright, c[0].padEnd(12)), ts(HACK.primary, '>> '), ts(HACK.soft, c[1])]));
     });
     blank();
   }
 
   if (d.collab) {
     out.push(sep('─'));
-    out.push(line([ts(C.green, '> '), ts(C.mid, 'OPEN TO: '), ts(C.text, d.collab)]));
+    out.push(line([ts(HACK.primary, '> '), ts(HACK.muted, 'OPEN TO: '), ts(HACK.soft, d.collab)]));
     blank();
   }
 
   out.push(sep());
 
   if (d.motto) {
-    out.push('<text x="' + cx + '" y="' + y + '" text-anchor="middle" fill="' + C.green + '" font-style="italic">' + esc('>> ' + d.motto + ' <<') + '</text>');
+    out.push('<text x="' + cx + '" y="' + y + '" text-anchor="middle" fill="' + HACK.primary + '" font-style="italic">' + esc('>> ' + d.motto + ' <<') + '</text>');
     y += LINE_H;
   }
 
@@ -417,7 +424,7 @@ function renderProfileHacker(d) {
 
   return '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '">' +
     buildDefs() +
-    '<rect width="' + W + '" height="' + H + '" rx="8" fill="#050805" stroke="rgba(57,211,83,0.4)" stroke-width="1.5"/>' +
+    '<rect width="' + W + '" height="' + H + '" rx="8" fill="none" stroke="rgba(133,161,190,0.6)" stroke-width="1.5"/>' +
     out.join('\n') +
     '</svg>';
 }
@@ -433,10 +440,10 @@ function renderProfileCard(d) {
     '<stop offset="0%" style="stop-color:' + C.accent + ';stop-opacity:1"/>' +
     '<stop offset="100%" style="stop-color:#1a3a5c;stop-opacity:1"/>' +
     '</linearGradient>' +
-    '<style>text { font-family: \'JetBrains Mono\', monospace; font-size: ' + FONT_SIZE + 'px; }</style>' +
+    '<style>text { font-family: \'JetBrains Mono\', monospace; font-size: ' + FONT_SIZE + 'px; stroke: rgba(0,0,0,0.9); stroke-width: 1.3px; paint-order: stroke fill; filter: drop-shadow(0 1px 1.5px rgba(0,0,0,0.55)); }</style>' +
     '</defs>');
 
-  out.push('<rect width="' + cardW + '" height="' + headerH + '" fill="url(#hgrad)"/>');
+  out.push('<rect width="' + cardW + '" height="' + headerH + '" fill="url(#hgrad)" opacity="0.35"/>');
 
   if (d.opts.banner && d.banner) {
     var bannerLines = d.banner.split('\n').slice(0, 5);
@@ -536,7 +543,7 @@ function renderProfileCard(d) {
   var H = y + 20;
 
   return '<svg xmlns="http://www.w3.org/2000/svg" width="' + cardW + '" height="' + H + '" viewBox="0 0 ' + cardW + ' ' + H + '">' +
-    '<rect width="' + cardW + '" height="' + H + '" rx="10" fill="' + C.bg + '" stroke="' + C.border + '" stroke-width="1.5"/>' +
+    '<rect width="' + cardW + '" height="' + H + '" rx="10" fill="none" stroke="' + C.border + '" stroke-width="1.5"/>' +
     out.join('\n') +
     '</svg>';
 }
