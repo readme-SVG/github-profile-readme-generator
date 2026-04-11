@@ -9,7 +9,6 @@ var currentProfile = 'terminal';
 var lastSVG = '';
 var lastMarkdown = '';
 var bannerText = '';
-var figletRetryTimer = null;
 
 function escAttr(s) {
   return String(s || '').replace(/"/g, '&quot;');
@@ -100,7 +99,34 @@ function setFigletPreview(text) {
   pre.textContent = text;
 }
 
-function updateBanner() {
+var figletFontPromises = {};
+
+function ensureFontLoaded(fontName) {
+  if (Figlet.isLoaded(fontName)) {
+    return Promise.resolve();
+  }
+
+  if (figletFontPromises[fontName]) {
+    return figletFontPromises[fontName];
+  }
+
+  figletFontPromises[fontName] = new Promise(function(resolve, reject) {
+    var script = document.createElement('script');
+    script.src = 'js/fonts/' + fontName + '.js';
+    script.onload = function() {
+      resolve();
+    };
+    script.onerror = function() {
+      delete figletFontPromises[fontName];
+      reject(new Error('Failed to load Figlet font: ' + fontName));
+    };
+    document.head.appendChild(script);
+  });
+
+  return figletFontPromises[fontName];
+}
+
+async function updateBanner() {
   var fontName = g('figlet-font') || 'big';
   var text = g('banner-text');
   if (!text) {
@@ -108,21 +134,10 @@ function updateBanner() {
   }
   if (!text) text = 'README';
 
-  if (figletRetryTimer) {
-    clearTimeout(figletRetryTimer);
-    figletRetryTimer = null;
-  }
-
-  if (!Figlet.isLoaded(fontName)) {
-    bannerText = text;
-    setFigletPreview('Loading font "' + fontName + '"...');
-    figletRetryTimer = setTimeout(function() {
-      updateBanner();
-    }, 80);
-    return;
-  }
+  setFigletPreview('Loading font "' + fontName + '"...');
 
   try {
+    await ensureFontLoaded(fontName);
     bannerText = Figlet.renderText(text, fontName);
   } catch (e) {
     bannerText = text;
@@ -131,8 +146,8 @@ function updateBanner() {
   setFigletPreview(bannerText);
 }
 
-function generate() {
-  updateBanner();
+async function generate() {
+  await updateBanner();
   var d = getData();
   var svgStr = '';
 
@@ -147,22 +162,22 @@ function generate() {
   document.getElementById('preview-output').innerHTML = svgStr;
 }
 
-function switchTab(name) {
+async function switchTab(name) {
   document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active'); });
   document.querySelectorAll('.nav-btn').forEach(function(b) { b.classList.remove('active'); });
   var panel = document.getElementById('tab-' + name);
   if (panel) panel.classList.add('active');
   var btn = document.querySelector('.nav-btn[data-tab="' + name + '"]');
   if (btn) btn.classList.add('active');
-  if (name === 'preview') generate();
+  if (name === 'preview') await generate();
 }
 
-function switchProfile(name) {
+async function switchProfile(name) {
   currentProfile = name;
   document.querySelectorAll('.profile-tab').forEach(function(t) { t.classList.remove('active'); });
   var tab = document.querySelector('.profile-tab[data-profile="' + name + '"]');
   if (tab) tab.classList.add('active');
-  generate();
+  await generate();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -177,44 +192,43 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.querySelectorAll('.nav-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() { switchTab(btn.dataset.tab); });
+    btn.addEventListener('click', async function() { await switchTab(btn.dataset.tab); });
   });
 
   document.querySelectorAll('.profile-tab').forEach(function(tab) {
-    tab.addEventListener('click', function() { switchProfile(tab.dataset.profile); });
+    tab.addEventListener('click', async function() { await switchProfile(tab.dataset.profile); });
   });
 
-  document.getElementById('generate-btn').addEventListener('click', function() {
-    generate();
+  document.getElementById('generate-btn').addEventListener('click', async function() {
+    await generate();
     var activePanel = document.querySelector('.panel.active');
-    if (activePanel && activePanel.id === 'tab-editor') switchTab('preview');
+    if (activePanel && activePanel.id === 'tab-editor') await switchTab('preview');
   });
 
-  document.getElementById('preview-font-btn').addEventListener('click', function() {
-    updateBanner();
-    generate();
+  document.getElementById('preview-font-btn').addEventListener('click', async function() {
+    await generate();
   });
 
-  document.getElementById('figlet-font').addEventListener('change', function() {
-    updateBanner();
+  document.getElementById('figlet-font').addEventListener('change', async function() {
+    await updateBanner();
     if (document.querySelector('.panel.active') && document.querySelector('.panel.active').id === 'tab-preview') {
-      generate();
+      await generate();
     }
   });
 
-  document.getElementById('figlet-font').addEventListener('input', function() {
-    updateBanner();
+  document.getElementById('figlet-font').addEventListener('input', async function() {
+    await updateBanner();
   });
 
-  document.getElementById('username').addEventListener('input', function() {
+  document.getElementById('username').addEventListener('input', async function() {
     var bannerInput = document.getElementById('banner-text');
     if (!bannerInput.value.trim()) {
-      updateBanner();
+      await updateBanner();
     }
   });
 
-  document.getElementById('banner-text').addEventListener('input', function() {
-    updateBanner();
+  document.getElementById('banner-text').addEventListener('input', async function() {
+    await updateBanner();
   });
 
   document.getElementById('download-svg').addEventListener('click', function() {
@@ -227,14 +241,14 @@ document.addEventListener('DOMContentLoaded', function() {
     showToast('downloaded SVG');
   });
 
-  document.getElementById('copy-md').addEventListener('click', function() {
-    if (!lastMarkdown) generate();
+  document.getElementById('copy-md').addEventListener('click', async function() {
+    if (!lastMarkdown) await generate();
     if (!lastMarkdown) { showToast('generate first'); return; }
     navigator.clipboard.writeText(lastMarkdown).then(function() { showToast('copied!'); });
   });
 
-  document.getElementById('download-md').addEventListener('click', function() {
-    if (!lastMarkdown) generate();
+  document.getElementById('download-md').addEventListener('click', async function() {
+    if (!lastMarkdown) await generate();
     if (!lastMarkdown) { showToast('generate first'); return; }
     var a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([lastMarkdown], { type: 'text/markdown' }));
