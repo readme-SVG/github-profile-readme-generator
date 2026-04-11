@@ -1,0 +1,1287 @@
+Figlet.loadFont('digital', "flf2a\u007f 3 2 6 1 11 0 16513
+Digital by Glenn Chappell 1/94 -- based on Bubble
+Includes characters 128-255
+Enhanced for Latin-2,3,4 by John Cowan <cowan@ccil.org>
+Latin character sets supported only if your screen font does
+figlet release 2.2 -- November 1996
+Permission is hereby given to modify this font, as long as the
+modifier's name is placed on a comment line.
+
+Modified by Paul Burton <solution@earthlink.net> 12/96 to include new parameter
+supported by FIGlet and FIGWin.  May also be slightly modified for better use
+of new full-width/kern/smush alternatives, but default output is NOT changed.
+ \u007f@
+ \u007f@
+ \u007f@@
+ +-+@
+ |!|@
+ +-+@@
+ +-+@
+ |\"|@
+ +-+@@
+ +-+@
+ |#|@
+ +-+@@
+ +-+@
+ |$|@
+ +-+@@
+ +-+@
+ |%|@
+ +-+@@
+ +-+@
+ |&|@
+ +-+@@
+ +-+@
+ |'|@
+ +-+@@
+ +-+@
+ |(|@
+ +-+@@
+ +-+@
+ |)|@
+ +-+@@
+ +-+@
+ |*|@
+ +-+@@
+ +-+@
+ |+|@
+ +-+@@
+ +-+@
+ |,|@
+ +-+@@
+ +-+@
+ |-|@
+ +-+@@
+ +-+@
+ |.|@
+ +-+@@
+ +-+@
+ |/|@
+ +-+@@
+ +-+@
+ |0|@
+ +-+@@
+ +-+@
+ |1|@
+ +-+@@
+ +-+@
+ |2|@
+ +-+@@
+ +-+@
+ |3|@
+ +-+@@
+ +-+@
+ |4|@
+ +-+@@
+ +-+@
+ |5|@
+ +-+@@
+ +-+@
+ |6|@
+ +-+@@
+ +-+@
+ |7|@
+ +-+@@
+ +-+@
+ |8|@
+ +-+@@
+ +-+@
+ |9|@
+ +-+@@
+ +-+@
+ |:|@
+ +-+@@
+ +-+@
+ |;|@
+ +-+@@
+ +-+@
+ |<|@
+ +-+@@
+ +-+@
+ |=|@
+ +-+@@
+ +-+@
+ |>|@
+ +-+@@
+ +-+@
+ |?|@
+ +-+@@
+ +-+@
+ |@|@
+ +-+@@
+ +-+@
+ |A|@
+ +-+@@
+ +-+@
+ |B|@
+ +-+@@
+ +-+@
+ |C|@
+ +-+@@
+ +-+@
+ |D|@
+ +-+@@
+ +-+@
+ |E|@
+ +-+@@
+ +-+@
+ |F|@
+ +-+@@
+ +-+@
+ |G|@
+ +-+@@
+ +-+@
+ |H|@
+ +-+@@
+ +-+@
+ |I|@
+ +-+@@
+ +-+@
+ |J|@
+ +-+@@
+ +-+@
+ |K|@
+ +-+@@
+ +-+@
+ |L|@
+ +-+@@
+ +-+@
+ |M|@
+ +-+@@
+ +-+@
+ |N|@
+ +-+@@
+ +-+@
+ |O|@
+ +-+@@
+ +-+@
+ |P|@
+ +-+@@
+ +-+@
+ |Q|@
+ +-+@@
+ +-+@
+ |R|@
+ +-+@@
+ +-+@
+ |S|@
+ +-+@@
+ +-+@
+ |T|@
+ +-+@@
+ +-+@
+ |U|@
+ +-+@@
+ +-+@
+ |V|@
+ +-+@@
+ +-+@
+ |W|@
+ +-+@@
+ +-+@
+ |X|@
+ +-+@@
+ +-+@
+ |Y|@
+ +-+@@
+ +-+@
+ |Z|@
+ +-+@@
+ +-+@
+ |[|@
+ +-+@@
+ +-+@
+ |\|@
+ +-+@@
+ +-+@
+ |]|@
+ +-+@@
+ +-+@
+ |^|@
+ +-+@@
+ +-+@
+ |_|@
+ +-+@@
+ +-+@
+ |`|@
+ +-+@@
+ +-+@
+ |a|@
+ +-+@@
+ +-+@
+ |b|@
+ +-+@@
+ +-+@
+ |c|@
+ +-+@@
+ +-+@
+ |d|@
+ +-+@@
+ +-+@
+ |e|@
+ +-+@@
+ +-+@
+ |f|@
+ +-+@@
+ +-+@
+ |g|@
+ +-+@@
+ +-+@
+ |h|@
+ +-+@@
+ +-+@
+ |i|@
+ +-+@@
+ +-+@
+ |j|@
+ +-+@@
+ +-+@
+ |k|@
+ +-+@@
+ +-+@
+ |l|@
+ +-+@@
+ +-+@
+ |m|@
+ +-+@@
+ +-+@
+ |n|@
+ +-+@@
+ +-+@
+ |o|@
+ +-+@@
+ +-+@
+ |p|@
+ +-+@@
+ +-+@
+ |q|@
+ +-+@@
+ +-+@
+ |r|@
+ +-+@@
+ +-+@
+ |s|@
+ +-+@@
+ +-+@
+ |t|@
+ +-+@@
+ +-+@
+ |u|@
+ +-+@@
+ +-+@
+ |v|@
+ +-+@@
+ +-+@
+ |w|@
+ +-+@@
+ +-+@
+ |x|@
+ +-+@@
+ +-+@
+ |y|@
+ +-+@@
+ +-+@
+ |z|@
+ +-+@@
+ +-+@
+ |{|@
+ +-+@@
+ +-+@
+ |||@
+ +-+@@
+ +-+@
+ |}|@
+ +-+@@
+ +-+@
+ |~|@
+ +-+@@
+ +-+@
+ |\udcc4|@
+ +-+@@
+ +-+@
+ |\udcd6|@
+ +-+@@
+ +-+@
+ |\udcdc|@
+ +-+@@
+ +-+@
+ |\udce4|@
+ +-+@@
+ +-+@
+ |\udcf6|@
+ +-+@@
+ +-+@
+ |\udcfc|@
+ +-+@@
+ +-+@
+ |\udcdf|@
+ +-+@@
+128
+ +-+@
+ |\udc80|@
+ +-+@@
+129
+ +-+@
+ |\udc81|@
+ +-+@@
+130
+ +-+@
+ |\udc82|@
+ +-+@@
+131
+ +-+@
+ |\udc83|@
+ +-+@@
+132
+ +-+@
+ |\udc84|@
+ +-+@@
+133
+ +-+@
+ |\udc85|@
+ +-+@@
+134
+ +-+@
+ |\udc86|@
+ +-+@@
+135
+ +-+@
+ |\udc87|@
+ +-+@@
+136
+ +-+@
+ |\udc88|@
+ +-+@@
+137
+ +-+@
+ |\udc89|@
+ +-+@@
+138
+ +-+@
+ |\udc8a|@
+ +-+@@
+139
+ +-+@
+ |\udc8b|@
+ +-+@@
+140
+ +-+@
+ |\udc8c|@
+ +-+@@
+141
+ +-+@
+ |\udc8d|@
+ +-+@@
+142
+ +-+@
+ |\udc8e|@
+ +-+@@
+143
+ +-+@
+ |\udc8f|@
+ +-+@@
+144
+ +-+@
+ |\udc90|@
+ +-+@@
+145
+ +-+@
+ |\udc91|@
+ +-+@@
+146
+ +-+@
+ |\udc92|@
+ +-+@@
+147
+ +-+@
+ |\udc93|@
+ +-+@@
+148
+ +-+@
+ |\udc94|@
+ +-+@@
+149
+ +-+@
+ |\udc95|@
+ +-+@@
+150
+ +-+@
+ |\udc96|@
+ +-+@@
+151
+ +-+@
+ |\udc97|@
+ +-+@@
+152
+ +-+@
+ |\udc98|@
+ +-+@@
+153
+ +-+@
+ |\udc99|@
+ +-+@@
+154
+ +-+@
+ |\udc9a|@
+ +-+@@
+155
+ +-+@
+ |\udc9b|@
+ +-+@@
+156
+ +-+@
+ |\udc9c|@
+ +-+@@
+157
+ +-+@
+ |\udc9d|@
+ +-+@@
+158
+ +-+@
+ |\udc9e|@
+ +-+@@
+159
+ +-+@
+ |\udc9f|@
+ +-+@@
+160  NO-BREAK SPACE
+ +-+@
+ |\udca0|@
+ +-+@@
+161  INVERTED EXCLAMATION MARK
+ +-+@
+ |\udca1|@
+ +-+@@
+162  CENT SIGN
+ +-+@
+ |\udca2|@
+ +-+@@
+163  POUND SIGN
+ +-+@
+ |\udca3|@
+ +-+@@
+164  CURRENCY SIGN
+ +-+@
+ |\udca4|@
+ +-+@@
+165  YEN SIGN
+ +-+@
+ |\udca5|@
+ +-+@@
+166  BROKEN BAR
+ +-+@
+ |\udca6|@
+ +-+@@
+167  SECTION SIGN
+ +-+@
+ |\udca7|@
+ +-+@@
+168  DIAERESIS
+ +-+@
+ |\udca8|@
+ +-+@@
+169  COPYRIGHT SIGN
+ +-+@
+ |\udca9|@
+ +-+@@
+170  FEMININE ORDINAL INDICATOR
+ +-+@
+ |\udcaa|@
+ +-+@@
+171  LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+ +-+@
+ |\udcab|@
+ +-+@@
+172  NOT SIGN
+ +-+@
+ |\udcac|@
+ +-+@@
+173  SOFT HYPHEN
+ +-+@
+ |\udcad|@
+ +-+@@
+174  REGISTERED SIGN
+ +-+@
+ |\udcae|@
+ +-+@@
+175  MACRON
+ +-+@
+ |\udcaf|@
+ +-+@@
+176  DEGREE SIGN
+ +-+@
+ |\udcb0|@
+ +-+@@
+177  PLUS-MINUS SIGN
+ +-+@
+ |\udcb1|@
+ +-+@@
+178  SUPERSCRIPT TWO
+ +-+@
+ |\udcb2|@
+ +-+@@
+179  SUPERSCRIPT THREE
+ +-+@
+ |\udcb3|@
+ +-+@@
+180  ACUTE ACCENT
+ +-+@
+ |\udcb4|@
+ +-+@@
+181  MICRO SIGN
+ +-+@
+ |\udcb5|@
+ +-+@@
+182  PILCROW SIGN
+ +-+@
+ |\udcb6|@
+ +-+@@
+183  MIDDLE DOT
+ +-+@
+ |\udcb7|@
+ +-+@@
+184  CEDILLA
+ +-+@
+ |\udcb8|@
+ +-+@@
+185  SUPERSCRIPT ONE
+ +-+@
+ |\udcb9|@
+ +-+@@
+186  MASCULINE ORDINAL INDICATOR
+ +-+@
+ |\udcba|@
+ +-+@@
+187  RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+ +-+@
+ |\udcbb|@
+ +-+@@
+188  VULGAR FRACTION ONE QUARTER
+ +-+@
+ |\udcbc|@
+ +-+@@
+189  VULGAR FRACTION ONE HALF
+ +-+@
+ |\udcbd|@
+ +-+@@
+190  VULGAR FRACTION THREE QUARTERS
+ +-+@
+ |\udcbe|@
+ +-+@@
+191  INVERTED QUESTION MARK
+ +-+@
+ |\udcbf|@
+ +-+@@
+192  LATIN CAPITAL LETTER A WITH GRAVE
+ +-+@
+ |\udcc0|@
+ +-+@@
+193  LATIN CAPITAL LETTER A WITH ACUTE
+ +-+@
+ |\udcc1|@
+ +-+@@
+194  LATIN CAPITAL LETTER A WITH CIRCUMFLEX
+ +-+@
+ |\udcc2|@
+ +-+@@
+195  LATIN CAPITAL LETTER A WITH TILDE
+ +-+@
+ |\udcc3|@
+ +-+@@
+196  LATIN CAPITAL LETTER A WITH DIAERESIS
+ +-+@
+ |\udcc4|@
+ +-+@@
+197  LATIN CAPITAL LETTER A WITH RING ABOVE
+ +-+@
+ |\udcc5|@
+ +-+@@
+198  LATIN CAPITAL LETTER AE
+ +-+@
+ |\udcc6|@
+ +-+@@
+199  LATIN CAPITAL LETTER C WITH CEDILLA
+ +-+@
+ |\udcc7|@
+ +-+@@
+200  LATIN CAPITAL LETTER E WITH GRAVE
+ +-+@
+ |\udcc8|@
+ +-+@@
+201  LATIN CAPITAL LETTER E WITH ACUTE
+ +-+@
+ |\udcc9|@
+ +-+@@
+202  LATIN CAPITAL LETTER E WITH CIRCUMFLEX
+ +-+@
+ |\udcca|@
+ +-+@@
+203  LATIN CAPITAL LETTER E WITH DIAERESIS
+ +-+@
+ |\udccb|@
+ +-+@@
+204  LATIN CAPITAL LETTER I WITH GRAVE
+ +-+@
+ |\udccc|@
+ +-+@@
+205  LATIN CAPITAL LETTER I WITH ACUTE
+ +-+@
+ |\udccd|@
+ +-+@@
+206  LATIN CAPITAL LETTER I WITH CIRCUMFLEX
+ +-+@
+ |\udcce|@
+ +-+@@
+207  LATIN CAPITAL LETTER I WITH DIAERESIS
+ +-+@
+ |\udccf|@
+ +-+@@
+208  LATIN CAPITAL LETTER ETH
+ +-+@
+ |\udcd0|@
+ +-+@@
+209  LATIN CAPITAL LETTER N WITH TILDE
+ +-+@
+ |\udcd1|@
+ +-+@@
+210  LATIN CAPITAL LETTER O WITH GRAVE
+ +-+@
+ |\udcd2|@
+ +-+@@
+211  LATIN CAPITAL LETTER O WITH ACUTE
+ +-+@
+ |\udcd3|@
+ +-+@@
+212  LATIN CAPITAL LETTER O WITH CIRCUMFLEX
+ +-+@
+ |\udcd4|@
+ +-+@@
+213  LATIN CAPITAL LETTER O WITH TILDE
+ +-+@
+ |\udcd5|@
+ +-+@@
+214  LATIN CAPITAL LETTER O WITH DIAERESIS
+ +-+@
+ |\udcd6|@
+ +-+@@
+215  MULTIPLICATION SIGN
+ +-+@
+ |\udcd7|@
+ +-+@@
+216  LATIN CAPITAL LETTER O WITH STROKE
+ +-+@
+ |\udcd8|@
+ +-+@@
+217  LATIN CAPITAL LETTER U WITH GRAVE
+ +-+@
+ |\udcd9|@
+ +-+@@
+218  LATIN CAPITAL LETTER U WITH ACUTE
+ +-+@
+ |\udcda|@
+ +-+@@
+219  LATIN CAPITAL LETTER U WITH CIRCUMFLEX
+ +-+@
+ |\udcdb|@
+ +-+@@
+220  LATIN CAPITAL LETTER U WITH DIAERESIS
+ +-+@
+ |\udcdc|@
+ +-+@@
+221  LATIN CAPITAL LETTER Y WITH ACUTE
+ +-+@
+ |\udcdd|@
+ +-+@@
+222  LATIN CAPITAL LETTER THORN
+ +-+@
+ |\udcde|@
+ +-+@@
+223  LATIN SMALL LETTER SHARP S
+ +-+@
+ |\udcdf|@
+ +-+@@
+224  LATIN SMALL LETTER A WITH GRAVE
+ +-+@
+ |\udce0|@
+ +-+@@
+225  LATIN SMALL LETTER A WITH ACUTE
+ +-+@
+ |\udce1|@
+ +-+@@
+226  LATIN SMALL LETTER A WITH CIRCUMFLEX
+ +-+@
+ |\udce2|@
+ +-+@@
+227  LATIN SMALL LETTER A WITH TILDE
+ +-+@
+ |\udce3|@
+ +-+@@
+228  LATIN SMALL LETTER A WITH DIAERESIS
+ +-+@
+ |\udce4|@
+ +-+@@
+229  LATIN SMALL LETTER A WITH RING ABOVE
+ +-+@
+ |\udce5|@
+ +-+@@
+230  LATIN SMALL LETTER AE
+ +-+@
+ |\udce6|@
+ +-+@@
+231  LATIN SMALL LETTER C WITH CEDILLA
+ +-+@
+ |\udce7|@
+ +-+@@
+232  LATIN SMALL LETTER E WITH GRAVE
+ +-+@
+ |\udce8|@
+ +-+@@
+233  LATIN SMALL LETTER E WITH ACUTE
+ +-+@
+ |\udce9|@
+ +-+@@
+234  LATIN SMALL LETTER E WITH CIRCUMFLEX
+ +-+@
+ |\udcea|@
+ +-+@@
+235  LATIN SMALL LETTER E WITH DIAERESIS
+ +-+@
+ |\udceb|@
+ +-+@@
+236  LATIN SMALL LETTER I WITH GRAVE
+ +-+@
+ |\udcec|@
+ +-+@@
+237  LATIN SMALL LETTER I WITH ACUTE
+ +-+@
+ |\udced|@
+ +-+@@
+238  LATIN SMALL LETTER I WITH CIRCUMFLEX
+ +-+@
+ |\udcee|@
+ +-+@@
+239  LATIN SMALL LETTER I WITH DIAERESIS
+ +-+@
+ |\udcef|@
+ +-+@@
+240  LATIN SMALL LETTER ETH
+ +-+@
+ |\udcf0|@
+ +-+@@
+241  LATIN SMALL LETTER N WITH TILDE
+ +-+@
+ |\udcf1|@
+ +-+@@
+242  LATIN SMALL LETTER O WITH GRAVE
+ +-+@
+ |\udcf2|@
+ +-+@@
+243  LATIN SMALL LETTER O WITH ACUTE
+ +-+@
+ |\udcf3|@
+ +-+@@
+244  LATIN SMALL LETTER O WITH CIRCUMFLEX
+ +-+@
+ |\udcf4|@
+ +-+@@
+245  LATIN SMALL LETTER O WITH TILDE
+ +-+@
+ |\udcf5|@
+ +-+@@
+246  LATIN SMALL LETTER O WITH DIAERESIS
+ +-+@
+ |\udcf6|@
+ +-+@@
+247  DIVISION SIGN
+ +-+@
+ |\udcf7|@
+ +-+@@
+248  LATIN SMALL LETTER O WITH STROKE
+ +-+@
+ |\udcf8|@
+ +-+@@
+249  LATIN SMALL LETTER U WITH GRAVE
+ +-+@
+ |\udcf9|@
+ +-+@@
+250  LATIN SMALL LETTER U WITH ACUTE
+ +-+@
+ |\udcfa|@
+ +-+@@
+251  LATIN SMALL LETTER U WITH CIRCUMFLEX
+ +-+@
+ |\udcfb|@
+ +-+@@
+252  LATIN SMALL LETTER U WITH DIAERESIS
+ +-+@
+ |\udcfc|@
+ +-+@@
+253  LATIN SMALL LETTER Y WITH ACUTE
+ +-+@
+ |\udcfd|@
+ +-+@@
+254  LATIN SMALL LETTER THORN
+ +-+@
+ |\udcfe|@
+ +-+@@
+255  LATIN SMALL LETTER Y WITH DIAERESIS
+ +-+@
+ |\udcff|@
+ +-+@@
+0x0100  LATIN CAPITAL LETTER A WITH MACRON
+ +-+@
+ |\udcc0|@
+ +-+@@
+0x0101  LATIN SMALL LETTER A WITH MACRON
+ +-+@
+ |\udce0|@
+ +-+@@
+0x0102  LATIN CAPITAL LETTER A WITH BREVE
+ +-+@
+ |\udcc3|@
+ +-+@@
+0x0103  LATIN SMALL LETTER A WITH BREVE
+ +-+@
+ |\udce3|@
+ +-+@@
+0x0104  LATIN CAPITAL LETTER A WITH OGONEK
+ +-+@
+ |\udca1|@
+ +-+@@
+0x0105  LATIN SMALL LETTER A WITH OGONEK
+ +-+@
+ |\udcb1|@
+ +-+@@
+0x0106  LATIN CAPITAL LETTER C WITH ACUTE
+ +-+@
+ |\udcc6|@
+ +-+@@
+0x0107  LATIN SMALL LETTER C WITH ACUTE
+ +-+@
+ |\udce6|@
+ +-+@@
+0x0108  LATIN CAPITAL LETTER C WITH CIRCUMFLEX
+ +-+@
+ |\udcc6|@
+ +-+@@
+0x0109  LATIN SMALL LETTER C WITH CIRCUMFLEX
+ +-+@
+ |\udce6|@
+ +-+@@
+0x010A  LATIN CAPITAL LETTER C WITH DOT ABOVE
+ +-+@
+ |\udcc5|@
+ +-+@@
+0x010B  LATIN SMALL LETTER C WITH DOT ABOVE
+ +-+@
+ |\udce5|@
+ +-+@@
+0x010C  LATIN CAPITAL LETTER C WITH CARON
+ +-+@
+ |\udcc8|@
+ +-+@@
+0x010D  LATIN SMALL LETTER C WITH CARON
+ +-+@
+ |\udce8|@
+ +-+@@
+0x010E  LATIN CAPITAL LETTER D WITH CARON
+ +-+@
+ |\udccf|@
+ +-+@@
+0x010F  LATIN SMALL LETTER D WITH CARON
+ +-+@
+ |\udcef|@
+ +-+@@
+0x0110  LATIN CAPITAL LETTER D WITH STROKE
+ +-+@
+ |\udcd0|@
+ +-+@@
+0x0111  LATIN SMALL LETTER D WITH STROKE
+ +-+@
+ |\udcf0|@
+ +-+@@
+0x0112  LATIN CAPITAL LETTER E WITH MACRON
+ +-+@
+ |\udcaa|@
+ +-+@@
+0x0113  LATIN SMALL LETTER E WITH MACRON
+ +-+@
+ |\udcba|@
+ +-+@@
+0x0116  LATIN CAPITAL LETTER E WITH DOT ABOVE
+ +-+@
+ |\udccc|@
+ +-+@@
+0x0117  LATIN SMALL LETTER E WITH DOT ABOVE
+ +-+@
+ |\udcec|@
+ +-+@@
+0x0118  LATIN CAPITAL LETTER E WITH OGONEK
+ +-+@
+ |\udcca|@
+ +-+@@
+0x0119  LATIN SMALL LETTER E WITH OGONEK
+ +-+@
+ |\udcea|@
+ +-+@@
+0x011A  LATIN CAPITAL LETTER E WITH CARON
+ +-+@
+ |\udccc|@
+ +-+@@
+0x011B  LATIN SMALL LETTER E WITH CARON
+ +-+@
+ |\udcec|@
+ +-+@@
+0x011C  LATIN CAPITAL LETTER G WITH CIRCUMFLEX
+ +-+@
+ |\udcd8|@
+ +-+@@
+0x011D  LATIN SMALL LETTER G WITH CIRCUMFLEX
+ +-+@
+ |\udcf8|@
+ +-+@@
+0x011E  LATIN CAPITAL LETTER G WITH BREVE
+ +-+@
+ |\udcab|@
+ +-+@@
+0x011F  LATIN SMALL LETTER G WITH BREVE
+ +-+@
+ |\udcbb|@
+ +-+@@
+0x0120  LATIN CAPITAL LETTER G WITH DOT ABOVE
+ +-+@
+ |\udcd5|@
+ +-+@@
+0x0121  LATIN SMALL LETTER G WITH DOT ABOVE
+ +-+@
+ |\udcf5|@
+ +-+@@
+0x0122  LATIN CAPITAL LETTER G WITH CEDILLA
+ +-+@
+ |\udcab|@
+ +-+@@
+0x0123  LATIN SMALL LETTER G WITH CEDILLA
+ +-+@
+ |\udcbb|@
+ +-+@@
+0x0124  LATIN CAPITAL LETTER H WITH CIRCUMFLEX
+ +-+@
+ |\udca6|@
+ +-+@@
+0x0125  LATIN SMALL LETTER H WITH CIRCUMFLEX
+ +-+@
+ |\udcb6|@
+ +-+@@
+0x0126  LATIN CAPITAL LETTER H WITH STROKE
+ +-+@
+ |\udca1|@
+ +-+@@
+0x0127  LATIN SMALL LETTER H WITH STROKE
+ +-+@
+ |\udcb1|@
+ +-+@@
+0x0128  LATIN CAPITAL LETTER I WITH TILDE
+ +-+@
+ |\udca5|@
+ +-+@@
+0x0129  LATIN SMALL LETTER I WITH TILDE
+ +-+@
+ |\udcb5|@
+ +-+@@
+0x012A  LATIN CAPITAL LETTER I WITH MACRON
+ +-+@
+ |\udccf|@
+ +-+@@
+0x012B  LATIN SMALL LETTER I WITH MACRON
+ +-+@
+ |\udcef|@
+ +-+@@
+0x012E  LATIN CAPITAL LETTER I WITH OGONEK
+ +-+@
+ |\udcc7|@
+ +-+@@
+0x012F  LATIN SMALL LETTER I WITH OGONEK
+ +-+@
+ |\udce7|@
+ +-+@@
+0x0130  LATIN CAPITAL LETTER I WITH DOT ABOVE
+ +-+@
+ |\udca9|@
+ +-+@@
+0x0131  LATIN SMALL LETTER DOTLESS I
+ +-+@
+ |\udcb9|@
+ +-+@@
+0x0134  LATIN CAPITAL LETTER J WITH CIRCUMFLEX
+ +-+@
+ |\udcac|@
+ +-+@@
+0x0135  LATIN SMALL LETTER J WITH CIRCUMFLEX
+ +-+@
+ |\udcbc|@
+ +-+@@
+0x0136  LATIN CAPITAL LETTER K WITH CEDILLA
+ +-+@
+ |\udcd3|@
+ +-+@@
+0x0137  LATIN SMALL LETTER K WITH CEDILLA
+ +-+@
+ |\udcf3|@
+ +-+@@
+0x0138  LATIN SMALL LETTER KRA
+ +-+@
+ |\udca2|@
+ +-+@@
+0x0139  LATIN CAPITAL LETTER L WITH ACUTE
+ +-+@
+ |\udcc5|@
+ +-+@@
+0x013A  LATIN SMALL LETTER L WITH ACUTE
+ +-+@
+ |\udce5|@
+ +-+@@
+0x013B  LATIN CAPITAL LETTER L WITH CEDILLA
+ +-+@
+ |\udca6|@
+ +-+@@
+0x013C  LATIN SMALL LETTER L WITH CEDILLA
+ +-+@
+ |\udcb6|@
+ +-+@@
+0x013D  LATIN CAPITAL LETTER L WITH CARON
+ +-+@
+ |\udca5|@
+ +-+@@
+0x013E  LATIN SMALL LETTER L WITH CARON
+ +-+@
+ |\udcb5|@
+ +-+@@
+0x0141  LATIN CAPITAL LETTER L WITH STROKE
+ +-+@
+ |\udca3|@
+ +-+@@
+0x0142  LATIN SMALL LETTER L WITH STROKE
+ +-+@
+ |\udcb3|@
+ +-+@@
+0x0143  LATIN CAPITAL LETTER N WITH ACUTE
+ +-+@
+ |\udcd1|@
+ +-+@@
+0x0144  LATIN SMALL LETTER N WITH ACUTE
+ +-+@
+ |\udcf1|@
+ +-+@@
+0x0145  LATIN CAPITAL LETTER N WITH CEDILLA
+ +-+@
+ |\udcd1|@
+ +-+@@
+0x0146  LATIN SMALL LETTER N WITH CEDILLA
+ +-+@
+ |\udcf1|@
+ +-+@@
+0x0147  LATIN CAPITAL LETTER N WITH CARON
+ +-+@
+ |\udcd2|@
+ +-+@@
+0x0148  LATIN SMALL LETTER N WITH CARON
+ +-+@
+ |\udcf2|@
+ +-+@@
+0x014A  LATIN CAPITAL LETTER ENG
+ +-+@
+ |\udcbd|@
+ +-+@@
+0x014B  LATIN SMALL LETTER ENG
+ +-+@
+ |\udcbf|@
+ +-+@@
+0x014C  LATIN CAPITAL LETTER O WITH MACRON
+ +-+@
+ |\udcd2|@
+ +-+@@
+0x014D  LATIN SMALL LETTER O WITH MACRON
+ +-+@
+ |\udcf2|@
+ +-+@@
+0x0150  LATIN CAPITAL LETTER O WITH DOUBLE ACUTE
+ +-+@
+ |\udcd5|@
+ +-+@@
+0x0151  LATIN SMALL LETTER O WITH DOUBLE ACUTE
+ +-+@
+ |\udcf5|@
+ +-+@@
+0x0154  LATIN CAPITAL LETTER R WITH ACUTE
+ +-+@
+ |\udcc0|@
+ +-+@@
+0x0155  LATIN SMALL LETTER R WITH ACUTE
+ +-+@
+ |\udce0|@
+ +-+@@
+0x0156  LATIN CAPITAL LETTER R WITH CEDILLA
+ +-+@
+ |\udca3|@
+ +-+@@
+0x0157  LATIN SMALL LETTER R WITH CEDILLA
+ +-+@
+ |\udcb3|@
+ +-+@@
+0x0158  LATIN CAPITAL LETTER R WITH CARON
+ +-+@
+ |\udcd8|@
+ +-+@@
+0x0159  LATIN SMALL LETTER R WITH CARON
+ +-+@
+ |\udcf8|@
+ +-+@@
+0x015A  LATIN CAPITAL LETTER S WITH ACUTE
+ +-+@
+ |\udca6|@
+ +-+@@
+0x015B  LATIN SMALL LETTER S WITH ACUTE
+ +-+@
+ |\udcb6|@
+ +-+@@
+0x015C  LATIN CAPITAL LETTER S WITH CIRCUMFLEX
+ +-+@
+ |\udcde|@
+ +-+@@
+0x015D  LATIN SMALL LETTER S WITH CIRCUMFLEX
+ +-+@
+ |\udcfe|@
+ +-+@@
+0x015E  LATIN CAPITAL LETTER S WITH CEDILLA
+ +-+@
+ |\udcaa|@
+ +-+@@
+0x015F  LATIN SMALL LETTER S WITH CEDILLA
+ +-+@
+ |\udcba|@
+ +-+@@
+0x0160  LATIN CAPITAL LETTER S WITH CARON
+ +-+@
+ |\udca9|@
+ +-+@@
+0x0161  LATIN SMALL LETTER S WITH CARON
+ +-+@
+ |\udcb9|@
+ +-+@@
+0x0162  LATIN CAPITAL LETTER T WITH CEDILLA
+ +-+@
+ |\udcde|@
+ +-+@@
+0x0163  LATIN SMALL LETTER T WITH CEDILLA
+ +-+@
+ |\udcfe|@
+ +-+@@
+0x0164  LATIN CAPITAL LETTER T WITH CARON
+ +-+@
+ |\udcab|@
+ +-+@@
+0x0165  LATIN SMALL LETTER T WITH CARON
+ +-+@
+ |\udcbb|@
+ +-+@@
+0x0166  LATIN CAPITAL LETTER T WITH STROKE
+ +-+@
+ |\udcac|@
+ +-+@@
+0x0167  LATIN SMALL LETTER T WITH STROKE
+ +-+@
+ |\udcbc|@
+ +-+@@
+0x0168  LATIN CAPITAL LETTER U WITH TILDE
+ +-+@
+ |\udcdd|@
+ +-+@@
+0x0169  LATIN SMALL LETTER U WITH TILDE
+ +-+@
+ |\udcfd|@
+ +-+@@
+0x016A  LATIN CAPITAL LETTER U WITH MACRON
+ +-+@
+ |\udcde|@
+ +-+@@
+0x016B  LATIN SMALL LETTER U WITH MACRON
+ +-+@
+ |\udcfe|@
+ +-+@@
+0x016C  LATIN CAPITAL LETTER U WITH BREVE
+ +-+@
+ |\udcdd|@
+ +-+@@
+0x016D  LATIN SMALL LETTER U WITH BREVE
+ +-+@
+ |\udcfd|@
+ +-+@@
+0x016E  LATIN CAPITAL LETTER U WITH RING ABOVE
+ +-+@
+ |\udcd9|@
+ +-+@@
+0x016F  LATIN SMALL LETTER U WITH RING ABOVE
+ +-+@
+ |\udcf9|@
+ +-+@@
+0x0170  LATIN CAPITAL LETTER U WITH DOUBLE ACUTE
+ +-+@
+ |\udcdb|@
+ +-+@@
+0x0171  LATIN SMALL LETTER U WITH DOUBLE ACUTE
+ +-+@
+ |\udcfb|@
+ +-+@@
+0x0172  LATIN CAPITAL LETTER U WITH OGONEK
+ +-+@
+ |\udcd9|@
+ +-+@@
+0x0173  LATIN SMALL LETTER U WITH OGONEK
+ +-+@
+ |\udcf9|@
+ +-+@@
+0x0179  LATIN CAPITAL LETTER Z WITH ACUTE
+ +-+@
+ |\udcac|@
+ +-+@@
+0x017A  LATIN SMALL LETTER Z WITH ACUTE
+ +-+@
+ |\udcbc|@
+ +-+@@
+0x017B  LATIN CAPITAL LETTER Z WITH DOT ABOVE
+ +-+@
+ |\udcaf|@
+ +-+@@
+0x017C  LATIN SMALL LETTER Z WITH DOT ABOVE
+ +-+@
+ |\udcbf|@
+ +-+@@
+0x017D  LATIN CAPITAL LETTER Z WITH CARON
+ +-+@
+ |\udcae|@
+ +-+@@
+0x017E  LATIN SMALL LETTER Z WITH CARON
+ +-+@
+ |\udcbe|@
+ +-+@@
+0x02C7  CARON
+ +-+@
+ |\udcb7|@
+ +-+@@
+0x02D8  BREVE
+ +-+@
+ |\udca2|@
+ +-+@@
+0x02D9  DOT ABOVE
+ +-+@
+ |\udcff|@
+ +-+@@
+0x02DB  OGONEK
+ +-+@
+ |\udcb2|@
+ +-+@@
+0x02DD  DOUBLE ACUTE ACCENT
+ +-+@
+ |\udcbd|@
+ +-+@@
+");

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub README Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="scanline"></div>
+<div class="noise"></div>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="prompt">┌─[</span><span class="user">readme</span><span class="at">@</span><span class="host">generator</span><span class="prompt">]</span>
+      <span class="blink">▋</span>
+    </div>
+    <nav class="nav">
+      <button class="nav-btn active" data-tab="editor">editor</button>
+      <button class="nav-btn" data-tab="preview">preview</button>
+    </nav>
+  </div>
+</header>
+
+<main class="main">
+
+  <section class="panel active" id="tab-editor">
+    <div class="editor-layout">
+
+      <div class="editor-col">
+        <div class="form-block">
+          <div class="block-label">// identity</div>
+          <div class="field">
+            <label>username</label>
+            <input type="text" id="username" placeholder="OstinUA" autocomplete="off">
+          </div>
+          <div class="field">
+            <label>display name</label>
+            <input type="text" id="fullname" placeholder="Andrii L." autocomplete="off">
+          </div>
+          <div class="field">
+            <label>tagline</label>
+            <input type="text" id="tagline" placeholder="Publisher Partnership Manager & Developer" autocomplete="off">
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>location</label>
+              <input type="text" id="location" placeholder="Kyiv, Ukraine" autocomplete="off">
+            </div>
+            <div class="field">
+              <label>role / title</label>
+              <input type="text" id="role" placeholder="DBRE · AdTech" autocomplete="off">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>org / university</label>
+              <input type="text" id="university" placeholder="Anthropic" autocomplete="off">
+            </div>
+            <div class="field">
+              <label>club / team</label>
+              <input type="text" id="club" placeholder="AdTech · IAB" autocomplete="off">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-block">
+          <div class="block-label">// contact</div>
+          <div class="field-row">
+            <div class="field">
+              <label>github url</label>
+              <input type="text" id="github" placeholder="github.com/OstinUA" autocomplete="off">
+            </div>
+            <div class="field">
+              <label>linkedin url</label>
+              <input type="text" id="linkedin" placeholder="linkedin.com/in/..." autocomplete="off">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>email</label>
+              <input type="text" id="email" placeholder="hello@example.com" autocomplete="off">
+            </div>
+            <div class="field">
+              <label>website</label>
+              <input type="text" id="website" placeholder="https://yoursite.com" autocomplete="off">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>twitter / x</label>
+              <input type="text" id="twitter" placeholder="@handle" autocomplete="off">
+            </div>
+            <div class="field">
+              <label>telegram</label>
+              <input type="text" id="telegram" placeholder="@username" autocomplete="off">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>platform label</label>
+              <input type="text" id="platform_label" placeholder="tryhackme" autocomplete="off">
+            </div>
+            <div class="field">
+              <label>platform url</label>
+              <input type="text" id="platform_url" placeholder="tryhackme.com/p/..." autocomplete="off">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-block">
+          <div class="block-label">// collab &amp; motto</div>
+          <div class="field">
+            <label>open to collaborate on</label>
+            <input type="text" id="collab" placeholder="CTF challenges, security tooling, open source" autocomplete="off">
+          </div>
+          <div class="field">
+            <label>closing motto</label>
+            <input type="text" id="motto" placeholder="hack the planet · learn · teach · repeat" autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <div class="editor-col">
+        <div class="form-block">
+          <div class="block-label">// banner style</div>
+          <div class="field">
+            <label>figlet font</label>
+            <div class="font-select-row">
+              <select id="figlet-font">
+                <option value="big">Big (default)</option>
+                <option value="banner">Banner</option>
+                <option value="block">Block</option>
+                <option value="bubble">Bubble</option>
+                <option value="digital">Digital</option>
+                <option value="ivrit">Ivrit</option>
+                <option value="lean">Lean</option>
+                <option value="mini">Mini</option>
+                <option value="script">Script</option>
+                <option value="shadow">Shadow</option>
+                <option value="slant">Slant</option>
+                <option value="small">Small</option>
+                <option value="smscript">SmScript</option>
+                <option value="smshadow">SmShadow</option>
+                <option value="smslant">SmSlant</option>
+                <option value="standard">Standard</option>
+                <option value="term">Term</option>
+              </select>
+              <button class="preview-font-btn" id="preview-font-btn">preview</button>
+            </div>
+          </div>
+          <div class="field">
+            <label>banner text (defaults to username)</label>
+            <input type="text" id="banner-text" placeholder="README" autocomplete="off">
+          </div>
+          <div class="figlet-preview" id="figlet-preview">
+            <span class="figlet-loading">loading figlet...</span>
+          </div>
+        </div>
+
+        <div class="form-block">
+          <div class="block-label">// tech stack</div>
+          <div class="field">
+            <label>languages (comma separated)</label>
+            <input type="text" id="langs" placeholder="Python, JS/Node, HTML/CSS, GAS" autocomplete="off">
+          </div>
+          <div class="field">
+            <label>os / environments</label>
+            <input type="text" id="os" placeholder="Linux, Windows, macOS" autocomplete="off">
+          </div>
+          <div class="field">
+            <label>tools &amp; frameworks</label>
+            <input type="text" id="tools" placeholder="Git, GitHub Actions, Docker, Vercel" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="form-block">
+          <div class="block-label">// skills</div>
+          <div id="skills-list"></div>
+          <button class="add-btn" id="add-skill">+ add skill</button>
+        </div>
+
+        <div class="form-block">
+          <div class="block-label">// options</div>
+          <div class="options-grid">
+            <label class="toggle"><input type="checkbox" id="opt-banner" checked><span class="tt"></span>ASCII banner</label>
+            <label class="toggle"><input type="checkbox" id="opt-stats" checked><span class="tt"></span>GitHub stats</label>
+            <label class="toggle"><input type="checkbox" id="opt-streak"><span class="tt"></span>streak card</label>
+            <label class="toggle"><input type="checkbox" id="opt-trophies"><span class="tt"></span>trophies</label>
+            <label class="toggle"><input type="checkbox" id="opt-snake"><span class="tt"></span>snake graph</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="panel" id="tab-preview">
+    <div class="profile-tabs">
+      <button class="profile-tab active" data-profile="terminal">Terminal</button>
+      <button class="profile-tab" data-profile="minimal">Minimal</button>
+      <button class="profile-tab" data-profile="hacker">Hacker</button>
+      <button class="profile-tab" data-profile="card">Card</button>
+    </div>
+    <div class="preview-container">
+      <div id="preview-output"></div>
+    </div>
+    <div class="preview-actions">
+      <button class="action-btn" id="download-svg">⬇ download SVG</button>
+      <button class="action-btn secondary" id="copy-md">copy markdown</button>
+      <button class="action-btn secondary" id="download-md">download .md</button>
+    </div>
+  </section>
+
+</main>
+
+<div class="fab-area">
+  <button class="fab" id="generate-btn">generate →</button>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/figlet.js"></script>
+<script src="js/fonts/big.js"></script>
+<script src="js/fonts/banner.js"></script>
+<script src="js/fonts/block.js"></script>
+<script src="js/fonts/bubble.js"></script>
+<script src="js/fonts/digital.js"></script>
+<script src="js/fonts/ivrit.js"></script>
+<script src="js/fonts/lean.js"></script>
+<script src="js/fonts/mini.js"></script>
+<script src="js/fonts/script.js"></script>
+<script src="js/fonts/shadow.js"></script>
+<script src="js/fonts/slant.js"></script>
+<script src="js/fonts/small.js"></script>
+<script src="js/fonts/smscript.js"></script>
+<script src="js/fonts/smshadow.js"></script>
+<script src="js/fonts/smslant.js"></script>
+<script src="js/fonts/standard.js"></script>
+<script src="js/fonts/term.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/exporter.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
