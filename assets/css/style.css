@@ -419,3 +419,10 @@ select option { background: var(--bg3); }
   pointer-events: none;
 }
 .toast.show { opacity: 1; transform: translateY(0); }
+
+.card.card-theme-light .template-spotlight .main-repo-title {
+  background: linear-gradient(135deg, #1f2328 0%, var(--tc, #58a6ff) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
